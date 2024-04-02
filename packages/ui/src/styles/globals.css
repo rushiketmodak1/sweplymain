@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{color: #333b4a;font-size: 14px;}
+.bgSweplyBlue{background-color: #14A1FF;}
+.loginSignUpTitleBx .active{border-color: #1081CC;color: #1081CC;font-weight: 500;background: #fff;}
+.loginRightSide{border-radius: 80px 0px 0px 80px;background: linear-gradient(180deg, #08315A 0%, #4A6B8A 100%), rgba(0, 0, 0, 0.10);padding: 0 144px;}
+.loginRightSide .swiper-wrapper {padding-bottom: 80px;}
+.loginRightSide .swiper-slide{background-color: #ffffff;height: 364px;border-radius: 40px;padding: 35px;display: flex !important;}
+.swiper-button-next, .swiper-button-prev{background-image: url(../styles/images/common/carouselArrow.svg);height: 48px !important;width: 48px !important;left: auto !important;right: 0 !important;top: auto !important;bottom: 0;}
+.swiper-button-prev{transform: rotate(180deg);right: 80px !important;}
+.swiper-button-next::after, .swiper-button-prev::after{display: none;}
+.sliderMainContent{margin-top: -50px;color: #EBF7FF;}
+.selectWorkSpace button{padding: 0 !important;font-weight: bold !important;}
+.selectWorkSpace button span{font-weight: bold !important;}

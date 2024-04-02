@@ -1,0 +1,5 @@
+[submodule "apps/sweplymaster"]
+	path = apps/sweplymaster
+	url = https://github.com/rushiketmodak1/sweplymaster.git
+	branch = master
+

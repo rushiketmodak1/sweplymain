@@ -1,0 +1,35 @@
+{
+  "name": "sweply-v2",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "vercel-install": "./vercel-submodule-workaround.sh && yarn --ignore-scripts --production=false"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@nextui-org/react": "^2.2.10",
+    "axios": "^1.5.0",
+    "dotenv-cli": "^7.4.0",
+    "framer-motion": "^11.0.12",
+    "redux-logger": "^3.0.6",
+    "swiper": "^11.0.7",
+    "validator": "^13.11.0",
+    "lru-cache": "^10.2.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalPassThroughEnv": ["AWS_SECRET_KEY", "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"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  },
+  "globalEnv": [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICo8a2UQhtybBt///S4wNkZsgzfekxulB1gc4G4Or3Ex t.lende@sweply.com"
+  ]
+}

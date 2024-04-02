@@ -1,0 +1,50 @@
+version: 0.2
+env:
+  parameter-store:
+    build_ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+X/7vh0uyyX+gL0vdJyvUQ1tXYBt3mUkOAkiZEAIph dell@DESKTOP-JHCDLJ0
+    git-credential-helper: yes
+
+phases:
+  install:
+    commands:
+      - mkdir -p ~/.ssh
+      - echo "$build_ssh_key" > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - ssh-keygen -F github.com || ssh-keyscan github.com >>~/.ssh/known_hosts
+      - git config --global url."git@github.com:".insteadOf "https://github.com/"
+      - git init
+      - git remote add origin https://github.com/rushiketmodak1/sweplymain.git
+      - git fetch
+      - git checkout -t origin/master
+      - git submodule init
+      - git submodule update --recursive
+  build:
+    commands:
+      - npm run build
+
+artifacts:
+  files:
+    - '**/*'
+
+
+
+
+# version: 1
+# applications:
+#   - appRoot: apps/sweplymaster
+#     frontend:
+#       phases:
+#         preBuild:
+#           commands:
+#             - yarn install
+#         build:
+#           commands:
+#             - npx turbo run build --filter=sweplymaster
+#       artifacts:
+#         baseDirectory: apps/sweplymaster/.next
+#         files:
+#           - "**/*"
+#       cache:
+#         paths:
+#           - node_modules/**/*
+#       buildPath: /

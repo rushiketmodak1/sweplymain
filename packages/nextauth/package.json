@@ -1,0 +1,12 @@
+{
+    "name": "@sweply-v2/auth",
+    "sideEffects": false,
+    "private": true,
+    "description": "Sweply Inc's main auth code",
+    "authors": "Sweply Inc.",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+      "next-auth": "^4.22.1"
+    }
+  }
